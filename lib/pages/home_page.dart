@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
               child: Card(
                 
                 child: ListTile(
-                  title: Text("GetX 1"),
+                  title: Text("GetX Dialog Box"),
                   subtitle: Text("Get X First Card"),
                   onTap: (){
                     Get.defaultDialog(
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                       )
                     );
 
-                    // Get.bottomSheet();
+                    
                   },
                 ),
               ),
@@ -59,23 +59,55 @@ class HomePage extends StatelessWidget {
               child: Card(
                 
                 child: ListTile(
-                  title: Text("GetX 2"),
+                  title: Text("GetX BottomSheet"),
                   subtitle: Text("Get X Second Card"),
+                  // onTap: (){
+                  //   Get.defaultDialog(
+                  //     title: "Dialog Box",
+                  //     middleText: "Are you sure u want to do it ? ",
+                  //     // textConfirm: "ok",
+                  //     // textCancel: "cancel"
+                  //     contentPadding: EdgeInsets.all(10),
+                  //     titlePadding: EdgeInsets.all(20),
+                  //     confirm: TextButton(onPressed: (){
+                  //       // Navigator.pop(context);
+                  //       Get.back();
+            
+                  //     }, child: Text("Ok")),
+                  //     cancel: TextButton(onPressed: (){}, child: Text("Cancel"))
+            
+                  //   );
+                  // },
                   onTap: (){
-                    Get.defaultDialog(
-                      title: "Dialog Box",
-                      middleText: "Are you sure u want to do it ? ",
-                      // textConfirm: "ok",
-                      // textCancel: "cancel"
-                      contentPadding: EdgeInsets.all(10),
-                      titlePadding: EdgeInsets.all(20),
-                      confirm: TextButton(onPressed: (){
-                        // Navigator.pop(context);
-                        Get.back();
-            
-                      }, child: Text("Ok")),
-                      cancel: TextButton(onPressed: (){}, child: Text("Cancel"))
-            
+                    Get.bottomSheet(
+                      Container(
+                        
+                        height: 300,
+                        decoration: BoxDecoration(
+                          color: Colors.blueAccent,
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))
+                        ),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.light_mode),
+                              title: Text("Light Mode"),
+                              onTap: (){
+                                Get.changeTheme(ThemeData.light());
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.dark_mode),
+                              title: Text("Dark Mode"),
+                              onTap: (){
+                                Get.changeTheme(ThemeData.dark());
+                              },
+                            )
+                          ],
+                        ),
+                      )
                     );
                   },
                 ),
