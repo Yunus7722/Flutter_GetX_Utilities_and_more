@@ -33,9 +33,23 @@ class HomePage extends StatelessWidget {
                         Get.back();
             
                       }, child: Text("Ok")),
-                      cancel: TextButton(onPressed: (){}, child: Text("Cancel"))
-            
+                      cancel: TextButton(onPressed: (){}, child: Text("Cancel")),
+
+                      // to write multi line text
+                      content: Column(
+                        children: [
+                          Text("Hello world"),
+                          Text("Hello world"),
+                          Text("Hello world"),
+                          Text("Hello world"),
+                          Text("Hello world"),
+                          Text("Hello world"),
+                          Text("Hello world"),
+                        ],
+                      )
                     );
+
+                    // Get.bottomSheet();
                   },
                 ),
               ),
