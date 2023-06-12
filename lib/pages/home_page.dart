@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_remaining_tutorials/pages/first_page.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -112,6 +113,11 @@ class HomePage extends StatelessWidget {
                   },
                 ),
               ),
+            ),
+            Container(    
+              child: TextButton(onPressed: (){
+                Get.to(FirstPage());
+              }, child: Text("Go to First page")),
             )
           ],
         ),
