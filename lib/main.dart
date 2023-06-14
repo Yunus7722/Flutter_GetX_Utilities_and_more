@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_remaining_tutorials/model/local_languages.dart';
+import 'package:flutter_getx_remaining_tutorials/pages/switch_page.dart';
 import 'package:flutter_getx_remaining_tutorials/pages/language.dart';
 import 'package:flutter_getx_remaining_tutorials/pages/sliding_page.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
 
       //for Slider with color Opacity
 
-      home: SlidingPage(),
+      // home: SlidingPage(),
+      home: SwitchPage(),
     );
   }
 }
