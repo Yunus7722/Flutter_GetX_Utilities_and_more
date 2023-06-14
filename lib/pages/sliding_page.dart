@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_remaining_tutorials/controllers/slider_controller.dart';
 import 'package:get/get.dart';
 
 class SlidingPage extends StatefulWidget {
   const SlidingPage({super.key});
-  
 
   @override
   State<SlidingPage> createState() => _SlidingPageState();
-  
 }
 
 class _SlidingPageState extends State<SlidingPage> {
-
-   double opaci = 0.4;
+  //  double opaci = 0.4;
 
   @override
   void initState() {
@@ -22,7 +20,9 @@ class _SlidingPageState extends State<SlidingPage> {
 
   @override
   Widget build(BuildContext context) {
-    
+    //dependency Injection
+    SlidingController controller = Get.put(SlidingController());
+    print("build");
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -31,20 +31,25 @@ class _SlidingPageState extends State<SlidingPage> {
           alignment: Alignment.center,
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
-            
+
             children: [
-              Container(
-                width: Get.width * 0.6,
-                height: Get.height * 0.3,
-                color: Colors.red.withOpacity(opaci),
+              Obx(
+                () => Container(
+                  width: Get.width * 0.6,
+                  height: Get.height * 0.3,
+                  color: Colors.red.withOpacity(controller.opaci.value),
+                ),
               ),
-              Slider(value: opaci, onChanged: (value){
-                print(opaci);
-                opaci=value;
-                setState(() {
-                  
-                });
-              })
+              Obx(() => Slider(
+                  value: controller.opaci.value,
+                  onChanged: (value) {
+                    controller.setOpacity(value);
+                    // print(opaci);
+                    // opaci=value;
+                    // setState(() {
+
+                    // });
+                  }))
             ],
           ),
         ),
