@@ -24,7 +24,7 @@ class _SlidingPageState extends State<SlidingPage> {
     SlidingController controller = Get.put(SlidingController());
     print("build");
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("Slider"),),
       body: Padding(
         padding: const EdgeInsets.only(top: 40),
         child: Align(
