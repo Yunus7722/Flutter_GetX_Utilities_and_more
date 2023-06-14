@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_remaining_tutorials/model/local_languages.dart';
+import 'package:flutter_getx_remaining_tutorials/pages/add_favourites_list.dart';
 import 'package:flutter_getx_remaining_tutorials/pages/switch_page.dart';
 import 'package:flutter_getx_remaining_tutorials/pages/language.dart';
 import 'package:flutter_getx_remaining_tutorials/pages/sliding_page.dart';
@@ -34,9 +35,13 @@ class MyApp extends StatelessWidget {
       // translations: LocalLanguages(),
 
       //for Slider with color Opacity
-
       // home: SlidingPage(),
-      home: SwitchPage(),
+
+      //for Switch
+      // home: SwitchPage(),
+
+      //for  AddingFavourites in Lists
+      home: AddFavourites(),
     );
   }
 }
